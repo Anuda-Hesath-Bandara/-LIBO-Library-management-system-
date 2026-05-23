@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #121212;
+            color: #eee;
+            margin: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #1e1e1e;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding: 20px;
+            color: white;
+            z-index: 1000;
+        }
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .logo img {
+            width: 80%;
+            border-radius: 10px;
+        }
+        .sidebar .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar .nav-links li {
+            margin: 15px 0;
+        }
+        .sidebar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s;
+            padding: 10px;
+            display: block;
+            border-radius: 8px;
+        }
+        .sidebar .nav-links a:hover {
+            background-color: #333;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            background-color: #181818;
+        }
+        .navbar {
+            background-color: #212121;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 250px;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .content {
+            margin-top: 70px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #eee;
+        }
+        .card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #ffbb33;
+            padding-bottom: 10px;
+        }
+        .dashboard-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #eee;
+        }
+        .stat-card h4 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #ffbb33;
+        }
+        .stat-card p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #bbb;
+        }
+        .book-card {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #eee;
+        }
+        .book-card img {
+            width: 80px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .book-card .book-info {
+            flex: 1;
+        }
+        .book-card h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #ffbb33;
+        }
+        .book-card p {
+            margin: 5px 0 0;
+            color: #bbb;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #212121;
+            color: #bbb;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="libo.jpeg" alt="Library Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="add_book.php">Add Book</a></li>
+        <li><a href="user_management.php">User Management</a></li>
+        <li><a href="book_management.php">Book Management</a></li>
+        <li><a href="manage_reservations.php">Manage Reservation</a></li>
+        <li><a href="index.php">Logout</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="navbar">
+        <h1>Library Management Admin Dashboard</h1>
+    </div>
+    <div class="content">
+        <div id="dashboard" class="card">
+            <h3>Dashboard</h3>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h4>1500</h4>
+                    <p>Total Books</p>
+                </div>
+                <div class="stat-card">
+                    <h4>500</h4>
+                    <p>Users</p>
+                </div>
+                <div class="stat-card">
+                    <h4>120</h4>
+                    <p>Borrowed Books</p>
+                </div>
+            </div>
+        </div>
+        <div id="users" class="card">
+            <h3>User Management</h3>
+            <p>Manage library users here.</p>
+        </div>
+        <div id="books" class="card">
+            <h3>Book Management</h3>
+            <div class="book-card">
+                <img src="chapter 1.jpg" alt="Book Image">
+                <div class="book-info">
+                    <h4>Book Title 1</h4>
+                    <p>Author Name 1</p>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="romance 2.jpg" alt="Book Image">
+                <div class="book-info">
+                    <h4>Book Title 2</h4>
+                    <p>Author Name 2</p>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="horror 2.jpg" alt="Book Image">
+                <div class="book-info">
+                    <h4>Book Title 3</h4>
+                    <p>Author Name 3</p>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="history 2.jpg" alt="Book Image">
+                <div class="book-info">
+                    <h4>Book Title 4</h4>
+                    <p>Author Name 4</p>
+                </div>
+            </div>
+            <div class="book-card">
+                <img src="sacred 3.jpg" alt="Book Image">
+                <div class="book-info">
+                    <h4>Book Title 5</h4>
+                    <p>Author Name 5</p>
+                </div>
+            </div>
+            <!-- Add more book cards as needed -->
+        </div>
+        <div id="borrowing" class="card">
+            <h3>Borrowing Records</h3>
+            <p>View and manage borrowing records here.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Library Management System</p>
+    </div>
+</div>
+
+</body>
+</html>
